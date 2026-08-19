@@ -28,10 +28,8 @@ titleScreen.addEventListener("pointerup", function () {
         // タイトル画面を完全に消す
         titleScreen.style.display = "none";
 
-        // hiddenクラスを強制的に消す
+        // ホーム画面を表示
         homeScreen.classList.remove("hidden");
-
-        // ホーム画面を強制表示
         homeScreen.style.display = "block";
         homeScreen.style.visibility = "visible";
         homeScreen.style.opacity = "1";
@@ -68,23 +66,84 @@ menuButtons.forEach(function (button) {
 
         const page = button.dataset.page;
 
+
+        // -------------------------
+        // 対戦
+        // -------------------------
+
         if (page === "battle") {
+
             alert("対戦画面は現在制作中！");
+
         }
+
+
+        // -------------------------
+        // デッキ
+        // -------------------------
 
         if (page === "deck") {
+
             alert("デッキ編集画面は現在制作中！");
+
         }
+
+
+        // -------------------------
+        // カード
+        // -------------------------
 
         if (page === "cards") {
-            alert("カード一覧は現在制作中！");
+
+            console.log("カード一覧へ移動");
+
+            // ホームを消す
+            homeScreen.style.display = "none";
+
+            // カード画面を表示
+            const cardsScreen =
+                document.getElementById("cards-screen");
+
+            cardsScreen.style.display = "block";
+
         }
 
+
+        // -------------------------
+        // 戦績
+        // -------------------------
+
         if (page === "records") {
+
             alert("戦績画面は現在制作中！");
+
         }
 
     });
+
+});
+
+
+// =========================
+// カード一覧 → ホーム
+// =========================
+
+const cardsScreen =
+    document.getElementById("cards-screen");
+
+const cardsBackButton =
+    document.getElementById("cards-back-button");
+
+
+cardsBackButton.addEventListener("pointerup", function () {
+
+    console.log("ホームへ戻る");
+
+    // カード画面を消す
+    cardsScreen.style.display = "none";
+
+    // ホーム画面を表示
+    homeScreen.style.display = "block";
 
 });
 

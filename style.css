@@ -1,0 +1,226 @@
+/* =========================
+   全体
+========================= */
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #000;
+    font-family: sans-serif;
+}
+
+body {
+    touch-action: manipulation;
+}
+
+
+/* =========================
+   共通画面
+========================= */
+
+.screen {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* =========================
+   タイトル画面
+========================= */
+
+#title-screen {
+    cursor: pointer;
+    z-index: 10;
+}
+
+#title-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* =========================
+   暗転
+========================= */
+
+#fade {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 100;
+
+    transition: opacity 0.25s ease;
+}
+
+#fade.active {
+    opacity: 1;
+}
+
+
+/* =========================
+   ホーム画面
+========================= */
+
+#home-screen {
+    background-image: url("images/IMG1524.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    z-index: 1;
+}
+
+
+/* =========================
+   メニューボタン
+========================= */
+
+.menu-button {
+    position: absolute;
+
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    /* スマホで長押ししたときの選択などを防ぐ */
+    user-select: none;
+    -webkit-user-select: none;
+
+    transition:
+        transform 0.12s ease,
+        filter 0.12s ease;
+}
+
+.menu-button img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+    pointer-events: none;
+}
+
+
+/* タップしたとき少し縮む */
+
+.menu-button:active {
+    transform: scale(0.94);
+    filter: brightness(0.8);
+}
+
+
+/* =========================
+   ボタン配置
+========================= */
+
+/*
+    左：巨大な対戦ボタン
+    右上：デッキ
+    右下：カード・戦績
+*/
+
+.battle-button {
+    width: 42%;
+    height: 68%;
+
+    left: 4%;
+    top: 22%;
+}
+
+.deck-button {
+    width: 27%;
+    height: 30%;
+
+    right: 15%;
+    top: 18%;
+}
+
+.card-button {
+    width: 22%;
+    height: 25%;
+
+    right: 30%;
+    bottom: 13%;
+}
+
+.record-button {
+    width: 22%;
+    height: 25%;
+
+    right: 4%;
+    bottom: 13%;
+}
+
+
+/* =========================
+   設定
+========================= */
+
+#settings-button {
+    position: absolute;
+
+    top: 4%;
+    right: 3%;
+
+    width: 90px;
+    height: 90px;
+
+    border: none;
+    background: transparent;
+
+    color: white;
+    font-size: 70px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    z-index: 20;
+
+    transition:
+        transform 0.15s ease,
+        opacity 0.15s ease;
+}
+
+#settings-button:active {
+    transform: scale(0.9) rotate(15deg);
+    opacity: 0.7;
+}
+
+
+/* =========================
+   小さい画面への対応
+========================= */
+
+@media (max-width: 900px) {
+
+    #settings-button {
+        width: 65px;
+        height: 65px;
+
+        font-size: 50px;
+    }
+}

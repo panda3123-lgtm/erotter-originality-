@@ -348,3 +348,94 @@ button {
         z-index: 20;
     }
 }
+
+
+/* =========================
+   カード一覧画面
+========================= */
+
+.page-screen {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    background: #111;
+    color: white;
+
+    z-index: 50;
+
+    overflow-y: auto;
+}
+
+
+/* タイトル */
+
+.page-screen h1 {
+    text-align: center;
+    margin: 30px 0;
+}
+
+
+/* 戻るボタン */
+
+#cards-back-button {
+    position: absolute;
+
+    top: 25px;
+    left: 25px;
+
+    padding: 12px 25px;
+
+    border: none;
+    border-radius: 15px;
+
+    background: #333;
+    color: white;
+
+    font-size: 20px;
+}
+
+
+/* カード一覧 */
+
+#card-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    padding: 30px;
+}
+
+
+/* カード */
+
+.card-item {
+    width: 180px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.card-item img {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 8px;
+
+    transition: transform 0.15s ease;
+}
+
+.card-item:active img {
+    transform: scale(0.95);
+}

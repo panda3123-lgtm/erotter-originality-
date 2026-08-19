@@ -102,39 +102,25 @@ settingsButton.addEventListener("click", () => {
     alert("設定画面は現在制作中！");
 });
 
-/* =========================
-   縦画面になったとき
-========================= */
 
-#rotate-message {
-    display: none;
+// =========================
+// 1920×1080画面の自動縮小
+// =========================
+
+function resizeGameScreen() {
+
+    const gameScreen = document.getElementById("game-screen");
+
+    const scaleX = window.innerWidth / 1920;
+    const scaleY = window.innerHeight / 1080;
+
+    // 画面からはみ出さない小さい方を採用
+    const scale = Math.min(scaleX, scaleY);
+
+    gameScreen.style.setProperty("--game-scale", scale);
 }
 
+window.addEventListener("resize", resizeGameScreen);
+window.addEventListener("orientationchange", resizeGameScreen);
 
-/* 縦向きの場合 */
-
-@media (orientation: portrait) {
-
-    #title-screen,
-    #home-screen {
-        display: none !important;
-    }
-
-    #rotate-message {
-        position: fixed;
-        inset: 0;
-
-        display: flex;
-
-        justify-content: center;
-        align-items: center;
-
-        background: #000;
-        color: #fff;
-
-        font-size: 32px;
-        text-align: center;
-
-        z-index: 9999;
-    }
-}
+resizeGameScreen();

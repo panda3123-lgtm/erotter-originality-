@@ -29,12 +29,16 @@ function startGame() {
     setTimeout(() => {
 
         titleScreen.classList.add("hidden");
+
         homeScreen.classList.remove("hidden");
 
-        // 少し待ってから暗転解除
+        // 暗転解除
         setTimeout(() => {
+
             fade.classList.remove("active");
+
             starting = false;
+
         }, 100);
 
     }, 250);
@@ -42,32 +46,17 @@ function startGame() {
 
 
 // =========================
-// ホーム画面のボタン
+// ホーム画面ボタン
 // =========================
 
-const menuButtons = document.querySelectorAll(".menu-button");
+const menuButtons =
+    document.querySelectorAll(".menu-button");
 
 menuButtons.forEach(button => {
 
     button.addEventListener("click", () => {
 
         const page = button.dataset.page;
-
-        console.log("選択:", page);
-
-        /*
-            今はまだ各画面を作っていないので、
-            とりあえず動作確認用。
-
-            後でここを
-
-            battle → 対戦画面
-            deck → デッキ編集
-            cards → カード一覧
-            records → 戦績
-
-            に変更する。
-        */
 
         switch (page) {
 
@@ -87,17 +76,21 @@ menuButtons.forEach(button => {
                 alert("戦績画面は現在制作中！");
                 break;
         }
+
     });
+
 });
 
 
 // =========================
-// 設定ら
+// 設定
 // =========================
 
-const settingsButton = document.getElementById("settings-button");
+const settingsButton =
+    document.getElementById("settings-button");
 
 settingsButton.addEventListener("click", () => {
 
     alert("設定画面は現在制作中！");
+
 });

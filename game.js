@@ -107,20 +107,5 @@ settingsButton.addEventListener("click", () => {
 // 1920×1080画面の自動縮小
 // =========================
 
-function resizeGameScreen() {
 
-    const gameScreen = document.getElementById("game-screen");
-
-    const scaleX = window.innerWidth / 1920;
-    const scaleY = window.innerHeight / 1080;
-
-    // 画面からはみ出さない小さい方を採用
-    const scale = Math.min(scaleX, scaleY);
-
-    gameScreen.style.setProperty("--game-scale", scale);
-}
-
-window.addEventListener("resize", resizeGameScreen);
-window.addEventListener("orientationchange", resizeGameScreen);
-
-resizeGameScreen();
+    

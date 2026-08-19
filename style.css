@@ -13,12 +13,16 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
+
     background: #000;
+
     font-family: sans-serif;
+
+    touch-action: manipulation;
 }
 
-body {
-    touch-action: manipulation;
+button {
+    font-family: inherit;
 }
 
 
@@ -28,13 +32,321 @@ body {
 
 .screen {
     position: fixed;
+
     inset: 0;
+
     width: 100%;
     height: 100%;
 }
 
 .hidden {
     display: none;
+}
+
+
+/* =========================
+   タイトル画面
+========================= */
+
+#title-screen {
+    cursor: pointer;
+
+    z-index: 10;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #000;
+}
+
+#title-screen img {
+    width: 100%;
+    height: 100%;
+
+    /*
+        coverではなくcontain。
+
+        これで縦画面でも
+        タイトル画像全体が見える。
+    */
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =========================
+   暗転
+========================= */
+
+#fade {
+    position: fixed;
+
+    inset: 0;
+
+    background: #000;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 100;
+
+    transition: opacity 0.25s ease;
+}
+
+#fade.active {
+    opacity: 1;
+}
+
+
+/* =========================
+   ホーム背景
+========================= */
+
+#home-screen {
+    background-image: url("images/IMG1524.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    z-index: 1;
+}
+
+
+/* =========================
+   メニューボタン共通
+========================= */
+
+.menu-button {
+    position: absolute;
+
+    border: none;
+
+    padding: 0;
+
+    margin: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    -webkit-user-select: none;
+
+    transition:
+        transform 0.12s ease,
+        filter 0.12s ease;
+}
+
+.menu-button img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+    pointer-events: none;
+}
+
+.menu-button:active {
+    transform: scale(0.94);
+
+    filter: brightness(0.8);
+}
+
+
+/* =================================================
+   横画面
+================================================= */
+
+@media (orientation: landscape) {
+
+    /*
+        対戦
+        左側に巨大配置
+    */
+
+    .battle-button {
+        width: 42%;
+        height: 68%;
+
+        left: 4%;
+        top: 22%;
+    }
+
+
+    /*
+        デッキ
+        右上
+    */
+
+    .deck-button {
+        width: 27%;
+        height: 30%;
+
+        right: 15%;
+        top: 18%;
+    }
+
+
+    /*
+        カード
+        右下
+    */
+
+    .card-button {
+        width: 22%;
+        height: 25%;
+
+        right: 30%;
+        bottom: 13%;
+    }
+
+
+    /*
+        戦績
+        右下
+    */
+
+    .record-button {
+        width: 22%;
+        height: 25%;
+
+        right: 4%;
+        bottom: 13%;
+    }
+
+
+    /*
+        設定
+    */
+
+    #settings-button {
+        position: absolute;
+
+        top: 4%;
+        right: 3%;
+
+        width: 90px;
+        height: 90px;
+
+        border: none;
+
+        background: transparent;
+
+        color: white;
+
+        font-size: 70px;
+
+        line-height: 1;
+
+        cursor: pointer;
+
+        z-index: 20;
+    }
+}
+
+
+/* =================================================
+   縦画面
+================================================= */
+
+@media (orientation: portrait) {
+
+    /*
+        対戦
+        一番大きく
+        画面中央
+    */
+
+    .battle-button {
+        width: 72%;
+        height: 32%;
+
+        left: 14%;
+        top: 18%;
+    }
+
+
+    /*
+        デッキ
+        対戦の下
+    */
+
+    .deck-button {
+        width: 55%;
+        height: 20%;
+
+        left: 22.5%;
+        top: 51%;
+    }
+
+
+    /*
+        カード
+        左下
+    */
+
+    .card-button {
+        width: 35%;
+        height: 15%;
+
+        left: 10%;
+        bottom: 10%;
+    }
+
+
+    /*
+        戦績
+        右下
+    */
+
+    .record-button {
+        width: 35%;
+        height: 15%;
+
+        right: 10%;
+        bottom: 10%;
+    }
+
+
+    /*
+        設定
+        右上
+    */
+
+    #settings-button {
+        position: absolute;
+
+        top: 3%;
+        right: 5%;
+
+        width: 70px;
+        height: 70px;
+
+        border: none;
+
+        background: transparent;
+
+        color: white;
+
+        font-size: 55px;
+
+        line-height: 1;
+
+        cursor: pointer;
+
+        z-index: 20;
+    }
 }
 
 

@@ -92,7 +92,7 @@ menuButtons.forEach(button => {
 
 
 // =========================
-// 設定
+// 設定ら
 // =========================
 
 const settingsButton = document.getElementById("settings-button");

@@ -51,14 +51,18 @@ body {
     left: 50%;
     top: 50%;
 
+    margin-left: -960px;
+    margin-top: -540px;
+
     transform-origin: center center;
-    transform: translate(-50%, -50%) scale(var(--game-scale));
+    transform: scale(var(--game-scale, 1));
 
     overflow: hidden;
 
     background: #000;
-}
 
+    z-index: 1;
+}
 
 /* =========================
    タイトル画面

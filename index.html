@@ -12,19 +12,16 @@
 
 <body>
 
-    <!-- 1920×1080のゲーム画面 -->
-    <div id="game-screen">
+    <!-- タイトル画面 -->
+    <div id="title-screen" class="screen">
+        <img src="images/start.PNG" alt="エラッタオリジナリティ">
+    </div>
 
-        <!-- タイトル画面 -->
-        <div id="title-screen" class="screen">
-            <img src="images/start.PNG" alt="エラッタオリジナリティ">
-        </div>
+    <!-- 暗転用 -->
+    <div id="fade"></div>
 
-        <!-- 暗転用 -->
-        <div id="fade"></div>
-
-        <!-- ホーム画面 -->
-        <div id="home-screen" class="screen hidden">
+    <!-- ホーム画面 -->
+    <div id="home-screen" class="screen hidden">
 
         <!-- 対戦 -->
         <button class="menu-button battle-button" data-page="battle">
@@ -50,8 +47,6 @@
         <button id="settings-button" aria-label="設定">⚙</button>
 
     </div>
-
-            </div>
 
     <script src="game.js"></script>
 </body>

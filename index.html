@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>エラッタオリジナリティ</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- タイトル画面 -->
+    <div id="title-screen" class="screen">
+        <img src="images/start.PNG" alt="エラッタオリジナリティ">
+    </div>
+
+    <!-- 暗転用 -->
+    <div id="fade"></div>
+
+    <!-- ホーム画面 -->
+    <div id="home-screen" class="screen hidden">
+
+        <!-- 対戦 -->
+        <button class="menu-button battle-button" data-page="battle">
+            <img src="images/IMG_2334.png" alt="対戦">
+        </button>
+
+        <!-- デッキ -->
+        <button class="menu-button deck-button" data-page="deck">
+            <img src="images/IMG_2335.png" alt="デッキ">
+        </button>
+
+        <!-- カード -->
+        <button class="menu-button card-button" data-page="cards">
+            <img src="images/IMG_2336.png" alt="カード">
+        </button>
+
+        <!-- 戦績 -->
+        <button class="menu-button record-button" data-page="records">
+            <img src="images/IMG_2338.png" alt="戦績">
+        </button>
+
+        <!-- 設定 -->
+        <button id="settings-button" aria-label="設定">⚙</button>
+
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

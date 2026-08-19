@@ -15,22 +15,26 @@ let starting = false;
 
 titleScreen.addEventListener("click", startGame);
 
-function startGame() {
+function startGame(event) {
 
-    // 二重タップ防止
     if (starting) return;
 
     starting = true;
 
-    // 暗転開始
+    console.log("START!");
+
+    // 暗転
     fade.classList.add("active");
 
-    // 暗転してからホーム画面へ
     setTimeout(() => {
 
-        titleScreen.classList.add("hidden");
+        // タイトルを完全に消す
+        titleScreen.style.display = "none";
 
-        homeScreen.classList.remove("hidden");
+        // ホームを確実に表示
+        homeScreen.style.display = "block";
+
+        console.log("HOME!");
 
         // 暗転解除
         setTimeout(() => {
@@ -39,9 +43,9 @@ function startGame() {
 
             starting = false;
 
-        }, 100);
+        }, 150);
 
-    }, 250);
+    }, 300);
 }
 
 

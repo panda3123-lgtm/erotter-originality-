@@ -101,3 +101,40 @@ settingsButton.addEventListener("click", () => {
 
     alert("設定画面は現在制作中！");
 });
+
+/* =========================
+   縦画面になったとき
+========================= */
+
+#rotate-message {
+    display: none;
+}
+
+
+/* 縦向きの場合 */
+
+@media (orientation: portrait) {
+
+    #title-screen,
+    #home-screen {
+        display: none !important;
+    }
+
+    #rotate-message {
+        position: fixed;
+        inset: 0;
+
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        background: #000;
+        color: #fff;
+
+        font-size: 32px;
+        text-align: center;
+
+        z-index: 9999;
+    }
+}

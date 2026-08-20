@@ -54,6 +54,9 @@ titleScreen.addEventListener("pointerup", function () {
 // =========================
 // メニューボタン
 // =========================
+// =========================
+// メニューボタン
+// =========================
 
 const menuButtons =
     document.querySelectorAll(".menu-button");
@@ -66,56 +69,46 @@ menuButtons.forEach(function (button) {
 
         const page = button.dataset.page;
 
+        console.log("押されたボタン:", page);
 
-        // -------------------------
-        // 対戦
-        // -------------------------
+        switch (page) {
 
-        if (page === "battle") {
+            case "battle":
 
-            alert("対戦画面は現在制作中！");
+                alert("対戦画面は現在制作中！");
 
-        }
-
-
-        // -------------------------
-        // デッキ
-        // -------------------------
-
-        if (page === "deck") {
-
-            alert("デッキ編集画面は現在制作中！");
-
-        }
+                break;
 
 
-        // -------------------------
-        // カード
-        // -------------------------
+            case "deck":
 
-        if (page === "cards") {
+                alert("デッキ編集画面は現在制作中！");
 
-            console.log("カード一覧へ移動");
-
-            // ホームを消す
-            homeScreen.style.display = "none";
-
-            // カード画面を表示
-            const cardsScreen =
-                document.getElementById("cards-screen");
-
-            cardsScreen.style.display = "block";
-
-        }
+                break;
 
 
-        // -------------------------
-        // 戦績
-        // -------------------------
+            case "cards":
 
-        if (page === "records") {
+                console.log("カード画面に移動！");
 
-            alert("戦績画面は現在制作中！");
+                // ホーム画面を消す
+                homeScreen.style.display = "none";
+
+                // カード画面を取得
+                const cardsScreen =
+                    document.getElementById("cards-screen");
+
+                // カード画面を表示
+                cardsScreen.style.display = "block";
+
+                break;
+
+
+            case "records":
+
+                alert("戦績画面は現在制作中！");
+
+                break;
 
         }
 
